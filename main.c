@@ -50,21 +50,21 @@ int main(void)
 	Init_GPIO.GPIO_Mode = GPIO_Mode_OUT;
 	Init_GPIO.GPIO_Speed = GPIO_Speed_2MHz;
 	Init_GPIO.GPIO_OType = GPIO_OType_PP;
-	Init_GPIO.GPIO_PuPd = GPIO_PuPd_UP;
+	Init_GPIO.GPIO_PuPd = GPIO_PuPd_DOWN;
 	GPIO_Init(GPIOA, &Init_GPIO);	// A0 Output pin for the yellow LED
 
 	Init_GPIO.GPIO_Pin = GPIO_Pin_1;
 	Init_GPIO.GPIO_Mode = GPIO_Mode_OUT;
 	Init_GPIO.GPIO_Speed = GPIO_Speed_2MHz;
 	Init_GPIO.GPIO_OType = GPIO_OType_PP;
-	Init_GPIO.GPIO_PuPd = GPIO_PuPd_UP;
+	Init_GPIO.GPIO_PuPd = GPIO_PuPd_DOWN;
 	GPIO_Init(GPIOA, &Init_GPIO);	// A1 Output pin for the green LED
 
 	Init_GPIO.GPIO_Pin = GPIO_Pin_2;
 	Init_GPIO.GPIO_Mode = GPIO_Mode_OUT;
 	Init_GPIO.GPIO_Speed = GPIO_Speed_2MHz;
 	Init_GPIO.GPIO_OType = GPIO_OType_PP;
-	Init_GPIO.GPIO_PuPd = GPIO_PuPd_UP;
+	Init_GPIO.GPIO_PuPd = GPIO_PuPd_DOWN;
 	GPIO_Init(GPIOA, &Init_GPIO);	// A2 Output pin for the red LED
 
 	// GPIOC->MODER |= 0x55 << 12;		// Switching the mode for pin 12 to output
@@ -78,121 +78,144 @@ int main(void)
 		int clk = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
 		int dt = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_12);
 
-		if (state == 0)	// IDLE STATE
-		{
-			if (!clk && dt)
-			{
-				state = 1;
-			}
-			else if (!dt && clk)
-			{
-				state = 4;
-			}
-			else
-			{
-				state = 0;
-			}
-		}
-		if (state == 1) // INITIAL CCW
-		{
-			// currLED = turnLED(0, currLED);
+//		if (!clk) GPIO_SetBits(GPIOA, GPIO_Pin_0);
+//		else GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+//		if (!dt) GPIO_SetBits(GPIOA, GPIO_Pin_1);
+//		else GPIO_ResetBits(GPIOA, GPIO_Pin_1);
+
+		switch (state) {
+		case 0:	// IDLE
+			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
+			GPIO_SetBits(GPIOA, GPIO_Pin_2);
+			if (!clk) state = 1;
+			else if (!dt) state = 4;
+			else state = 0;
+			break;
+		case 1: // RIGHT TURN INITIAL
+			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+			GPIO_SetBits(GPIOA, GPIO_Pin_1);
+			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
+			if (!dt) state = 2;
+			else state = 1;
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:	// LEFT TURN INITIAL
 			GPIO_SetBits(GPIOA, GPIO_Pin_0);
 			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-			if (!dt && !clk)
-			{
-				state = 2;
-			}
-			if (clk)
-			{
-				state = 0;
-			}
-			else
-			{
-				state = 1;
-			}
-		}
-		if (state == 2) // MID CCW
-		{
-			GPIO_SetBits(GPIOA, GPIO_Pin_0);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-			if (clk && !dt)
-			{
-				state = 3;
-			}
-			if (dt)
-			{
-				state = 1;
-			}
-			else
-			{
-				state = 2;
-			}
-		}
-		if (state == 3) // END CCW
-		{
-			GPIO_SetBits(GPIOA, GPIO_Pin_0);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-			// currLED = turnLED(0, currLED);
-			if (dt && clk)
-			{
-				state = 0;
-			}
-			if (!clk)
-			{
-				state = 2;
-			}
-			else
-			{
-				state = 3;
-			}
-		}
-		if (state == 4) // INITIAL CW
-		{
-			// currLED = turnLED(1, currLED);
 			GPIO_SetBits(GPIOA, GPIO_Pin_2);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-			if (!clk && !dt)
-			{
-				state = 5;
-			}
-			else
-			{
-				state = 4;
-			}
+			break;
 		}
-		if (state == 5) // MID CW
-		{
-			GPIO_SetBits(GPIOA, GPIO_Pin_2);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-			if (dt && !clk)
-			{
-				state = 6;
-			}
-			else
-			{
-				state = 5;
-			}
-		}
-		if (state == 6) // END CW
-		{
-			GPIO_SetBits(GPIOA, GPIO_Pin_2);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-			// currLED = turnLED(1, currLED);
-			if (clk && dt)
-			{
-				state = 0;
-			}
-			else
-			{
-				state = 6;
-			}
-		}
+
+//		if (state == 0)	// IDLE STATE
+//		{
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
+//			if (!clk && dt)
+//			{
+//				state = 1;
+//			}
+//			else if (!dt && clk)
+//			{
+//				state = 4;
+//			}
+//			else
+//			{
+//				state = 0;
+//			}
+//		}
+//		if (state == 1) // INITIAL CW
+//		{
+//			// currLED = turnLED(0, currLED);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
+//			GPIO_SetBits(GPIOA, GPIO_Pin_2);
+//			if (!dt)
+//			{
+//				state = 2;
+//			}
+//			else
+//			{
+//				state = 1;
+//			}
+//		}
+//		if (state == 2) // MID CW
+//		{
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+//			GPIO_SetBits(GPIOA, GPIO_Pin_1);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
+//			if (clk && !dt)
+//			{
+//				state = 3;
+//			}
+//			else
+//			{
+//				state = 2;
+//			}
+//		}
+//		if (state == 3) // END CW
+//		{
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+//			GPIO_SetBits(GPIOA, GPIO_Pin_1);
+//			GPIO_SetBits(GPIOA, GPIO_Pin_2);
+//			// currLED = turnLED(0, currLED);
+//			if (dt && clk)
+//			{
+//				state = 0;
+//			}
+//			else
+//			{
+//				state = 3;
+//			}
+//		}
+//		if (state == 4) // INITIAL CCW
+//		{
+//			// currLED = turnLED(1, currLED);
+//			GPIO_SetBits(GPIOA, GPIO_Pin_0);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
+//			if (!clk && !dt)
+//			{
+//				state = 5;
+//			}
+//			else
+//			{
+//				state = 4;
+//			}
+//		}
+//		if (state == 5) // MID CCW
+//		{
+//			GPIO_SetBits(GPIOA, GPIO_Pin_0);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
+//			GPIO_SetBits(GPIOA, GPIO_Pin_2);
+//			if (dt && !clk)
+//			{
+//				state = 6;
+//			}
+//			else
+//			{
+//				state = 5;
+//			}
+//		}
+//		if (state == 6) // END CCW
+//		{
+//			GPIO_SetBits(GPIOA, GPIO_Pin_0);
+//			GPIO_SetBits(GPIOA, GPIO_Pin_1);
+//			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
+//			// currLED = turnLED(1, currLED);
+//			if (clk && dt)
+//			{
+//				state = 0;
+//			}
+//			else
+//			{
+//				state = 6;
+//			}
+//		}
 	}
 
 //		GPIO_SetBits(GPIOA, GPIO_Pin_2);
