@@ -1,296 +1,303 @@
+/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    main.c
-  * @author  Ac6
-  * @version V1.0
-  * @date    01-December-2013
-  * @brief   Default main function.
+  * @file           : main.c
+  * @brief          : Main program body
   ******************************************************************************
-*/
+  * @attention
+  *
+  * Copyright (c) 2023 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
 
-#include "stm32f0xx.h"
-#include "stm32f0xx_gpio.h"
+/* USER CODE END Includes */
 
-int turnLED(int dir, int currLED);
-			
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
 
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+TIM_HandleTypeDef htim2;
+
+/* USER CODE BEGIN PV */
+
+volatile int userBtnIsr = 0;
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_TIM2_Init(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+uint32_t counter = 0;
+int16_t count = 0;
+int16_t position = 0;
+int16_t oldPosition = 0;
+int dir = 0;
+
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+	counter = __HAL_TIM_GET_COUNTER(htim);
+	count = (int16_t)counter;
+	position = count / 4;
+
+	if (oldPosition > position)	dir = 1;	// Right turn (CW)
+	else if (oldPosition < position) dir = -1;	// Left turn (CCW)
+	// else dir = 0;	// No turning
+
+	oldPosition = position;
+
+}
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
 int main(void)
 {
-	RCC->AHBENR |= RCC_AHBENR_GPIOCEN;	// Turning on the clock for GPIO channel C
-	RCC->AHBENR |= RCC_AHBENR_GPIOAEN;	// Turning on the clock for GPIO channel A
+  /* USER CODE BEGIN 1 */
 
-	GPIO_InitTypeDef Init_GPIO;
+  /* USER CODE END 1 */
 
-//	Init_GPIO.GPIO_Pin = GPIO_Pin_0;
-//	Init_GPIO.GPIO_Mode = GPIO_Mode_IN;
-//	Init_GPIO.GPIO_Speed = GPIO_Speed_Level_1;
-//	Init_GPIO.GPIO_PuPd = GPIO_PuPd_UP;
-//	GPIO_Init(GPIOB, &Init_GPIO);	// B0 is the clk for the encoder (Is not working)
+  /* MCU Configuration--------------------------------------------------------*/
 
-	Init_GPIO.GPIO_Pin = GPIO_Pin_13;
-	Init_GPIO.GPIO_Mode = GPIO_Mode_IN;
-	Init_GPIO.GPIO_Speed = GPIO_Speed_Level_3;
-	Init_GPIO.GPIO_PuPd = GPIO_PuPd_UP;
-	GPIO_Init(GPIOC, &Init_GPIO);	// C13 is the clk for the encoder
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
 
-	Init_GPIO.GPIO_Pin = GPIO_Pin_12;
-	Init_GPIO.GPIO_Mode = GPIO_Mode_IN;
-	Init_GPIO.GPIO_Speed = GPIO_Speed_Level_3;
-	Init_GPIO.GPIO_PuPd = GPIO_PuPd_UP;
-	GPIO_Init(GPIOC, &Init_GPIO);	// C12 is the dt for the encoder
+  /* USER CODE BEGIN Init */
 
-	Init_GPIO.GPIO_Pin = GPIO_Pin_1;
-	GPIO_Init(GPIOB, &Init_GPIO);	// B1 is the dt for the encoder (Is not working)
+  /* USER CODE END Init */
 
-	Init_GPIO.GPIO_Pin = GPIO_Pin_2;
-	GPIO_Init(GPIOB, &Init_GPIO);	// B2 is the switch for the encoder (Not sure if working)
+  /* Configure the system clock */
+  SystemClock_Config();
 
-	Init_GPIO.GPIO_Pin = GPIO_Pin_0;
-	Init_GPIO.GPIO_Mode = GPIO_Mode_OUT;
-	Init_GPIO.GPIO_Speed = GPIO_Speed_2MHz;
-	Init_GPIO.GPIO_OType = GPIO_OType_PP;
-	Init_GPIO.GPIO_PuPd = GPIO_PuPd_DOWN;
-	GPIO_Init(GPIOA, &Init_GPIO);	// A0 Output pin for the yellow LED
+  /* USER CODE BEGIN SysInit */
 
-	Init_GPIO.GPIO_Pin = GPIO_Pin_1;
-	Init_GPIO.GPIO_Mode = GPIO_Mode_OUT;
-	Init_GPIO.GPIO_Speed = GPIO_Speed_2MHz;
-	Init_GPIO.GPIO_OType = GPIO_OType_PP;
-	Init_GPIO.GPIO_PuPd = GPIO_PuPd_DOWN;
-	GPIO_Init(GPIOA, &Init_GPIO);	// A1 Output pin for the green LED
+  /* USER CODE END SysInit */
 
-	Init_GPIO.GPIO_Pin = GPIO_Pin_2;
-	Init_GPIO.GPIO_Mode = GPIO_Mode_OUT;
-	Init_GPIO.GPIO_Speed = GPIO_Speed_2MHz;
-	Init_GPIO.GPIO_OType = GPIO_OType_PP;
-	Init_GPIO.GPIO_PuPd = GPIO_PuPd_DOWN;
-	GPIO_Init(GPIOA, &Init_GPIO);	// A2 Output pin for the red LED
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_TIM2_Init();
+  /* USER CODE BEGIN 2 */
 
-	// GPIOC->MODER |= 0x55 << 12;		// Switching the mode for pin 12 to output
+  HAL_TIM_Encoder_Start_IT(&htim2, TIM_CHANNEL_ALL);
 
-	GPIO_SetBits(GPIOA, GPIO_Pin_1);	// Starting at the green LED in the middle
-	int currLED = 1;
+  /* USER CODE END 2 */
 
-	while(1)
-	{
-		int state = 0;
-		int clk = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
-		int dt = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_12);
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
 
-//		if (!clk) GPIO_SetBits(GPIOA, GPIO_Pin_0);
-//		else GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-//		if (!dt) GPIO_SetBits(GPIOA, GPIO_Pin_1);
-//		else GPIO_ResetBits(GPIOA, GPIO_Pin_1);
+	  if (userBtnIsr == 1)
+	  {
+		  for (int x = 0; x < 1000; x++);	// Attempt to debounce button
+		  userBtnIsr = 0;	// Clearing interrupt
+		  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_2);
+	  }
 
-		switch (state) {
-		case 0:	// IDLE
-			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-			GPIO_SetBits(GPIOA, GPIO_Pin_2);
-			if (!clk) state = 1;
-			else if (!dt) state = 4;
-			else state = 0;
-			break;
-		case 1: // RIGHT TURN INITIAL
-			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-			GPIO_SetBits(GPIOA, GPIO_Pin_1);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-			if (!dt) state = 2;
-			else state = 1;
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:	// LEFT TURN INITIAL
-			GPIO_SetBits(GPIOA, GPIO_Pin_0);
-			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-			GPIO_SetBits(GPIOA, GPIO_Pin_2);
-			break;
-		}
-
-//		if (state == 0)	// IDLE STATE
-//		{
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-//			if (!clk && dt)
-//			{
-//				state = 1;
-//			}
-//			else if (!dt && clk)
-//			{
-//				state = 4;
-//			}
-//			else
-//			{
-//				state = 0;
-//			}
-//		}
-//		if (state == 1) // INITIAL CW
-//		{
-//			// currLED = turnLED(0, currLED);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-//			GPIO_SetBits(GPIOA, GPIO_Pin_2);
-//			if (!dt)
-//			{
-//				state = 2;
-//			}
-//			else
-//			{
-//				state = 1;
-//			}
-//		}
-//		if (state == 2) // MID CW
-//		{
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-//			GPIO_SetBits(GPIOA, GPIO_Pin_1);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-//			if (clk && !dt)
-//			{
-//				state = 3;
-//			}
-//			else
-//			{
-//				state = 2;
-//			}
-//		}
-//		if (state == 3) // END CW
-//		{
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-//			GPIO_SetBits(GPIOA, GPIO_Pin_1);
-//			GPIO_SetBits(GPIOA, GPIO_Pin_2);
-//			// currLED = turnLED(0, currLED);
-//			if (dt && clk)
-//			{
-//				state = 0;
-//			}
-//			else
-//			{
-//				state = 3;
-//			}
-//		}
-//		if (state == 4) // INITIAL CCW
-//		{
-//			// currLED = turnLED(1, currLED);
-//			GPIO_SetBits(GPIOA, GPIO_Pin_0);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-//			if (!clk && !dt)
-//			{
-//				state = 5;
-//			}
-//			else
-//			{
-//				state = 4;
-//			}
-//		}
-//		if (state == 5) // MID CCW
-//		{
-//			GPIO_SetBits(GPIOA, GPIO_Pin_0);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-//			GPIO_SetBits(GPIOA, GPIO_Pin_2);
-//			if (dt && !clk)
-//			{
-//				state = 6;
-//			}
-//			else
-//			{
-//				state = 5;
-//			}
-//		}
-//		if (state == 6) // END CCW
-//		{
-//			GPIO_SetBits(GPIOA, GPIO_Pin_0);
-//			GPIO_SetBits(GPIOA, GPIO_Pin_1);
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-//			// currLED = turnLED(1, currLED);
-//			if (clk && dt)
-//			{
-//				state = 0;
-//			}
-//			else
-//			{
-//				state = 6;
-//			}
-//		}
-	}
-
-//		GPIO_SetBits(GPIOA, GPIO_Pin_2);
-//		GPIO_SetBits(GPIOA, GPIO_Pin_1);
-//		for (int i = 0; i <= 500000; i++) ;
-//		GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-//		GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-//		for (int i = 0; i <= 500000; i++) ;
-
-		// int clk = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
-//		if (dt == 0)
-//		{
-//			GPIO_SetBits(GPIOA, GPIO_Pin_0);
-//		}
-//		else
-//		{
-//			GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-//		}
-//	}
-
-	// GPIOA->MODER &= ~0b111111;		// Switching the mode for pin A0, A1, A2 to input
-//	for(;;)
-//	{
-//		GPIO_SetBits(GPIOB, GPIO_Pin_3);	// Turning on LED connected to B3
-//		int clk = GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0);
-//		// printf("%d", clk);
-//		if (clk == 0)
-//		{
-//			GPIOC->ODR ^= 0x3c0;	// Toggling the output value to flash the LED
-//
-//			for (int x = 0; x<1000000; x++)
-//			{
-//				;	// Simple waiting loop so you can see the LED flash
-//			}
-//		}
-//	}
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
 }
 
-int turnLED(int dir, int currLED)
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
 {
-	GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-	GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-	GPIO_ResetBits(GPIOA, GPIO_Pin_2);
-	if (currLED == 0 && dir == 0)
-	{
-		currLED = 2;
-	}
-	else if (currLED == 2 && dir == 1)
-	{
-		currLED = 0;
-	}
-	else if (dir == 0)
-	{
-		currLED--;
-	}
-	else
-	{
-		currLED++;
-	}
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-	if (currLED == 0)
-	{
-		GPIO_SetBits(GPIOA, GPIO_Pin_0);
-	}
-	else if (currLED == 1)
-	{
-		GPIO_SetBits(GPIOA, GPIO_Pin_1);
-	}
-	else
-	{
-		GPIO_SetBits(GPIOA, GPIO_Pin_2);
-	}
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
+  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
 
-	return(currLED);
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_Encoder_InitTypeDef sConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 0;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 65535;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
+  sConfig.IC1Polarity = TIM_ICPOLARITY_FALLING;
+  sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
+  sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
+  sConfig.IC1Filter = 0;
+  sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
+  sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
+  sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
+  sConfig.IC2Filter = 0;
+  if (HAL_TIM_Encoder_Init(&htim2, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
 
 }
 
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+/* USER CODE BEGIN MX_GPIO_Init_1 */
+/* USER CODE END MX_GPIO_Init_1 */
 
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOF_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GreenLED_GPIO_Port, GreenLED_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : USER_BTN_Pin */
+  GPIO_InitStruct.Pin = USER_BTN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(USER_BTN_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : GreenLED_Pin */
+  GPIO_InitStruct.Pin = GreenLED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GreenLED_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
+
+/* USER CODE BEGIN MX_GPIO_Init_2 */
+/* USER CODE END MX_GPIO_Init_2 */
+}
+
+/* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	if (GPIO_Pin == GPIO_PIN_13)
+	{
+		userBtnIsr = 1;
+		// for (int x = 0; x < 20000; x++);
+	}
+}
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */
