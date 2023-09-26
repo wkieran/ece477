@@ -20,7 +20,7 @@ void sd_card_init() {
     while(1);
   }
   else {
-    printf("SUCCESS : Mounted an SD card\n")
+    printf("SUCCESS : Mounted an SD card\n");
   }
 }
 
