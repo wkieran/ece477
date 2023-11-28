@@ -1,0 +1,337 @@
+2023-11-14 10:17:46,739 [INFO] I2sManager:658 - 5.0E7
+2023-11-14 10:17:46,796 [INFO] I2sManager:195 - I2S Clock Value : 5.0E7
+2023-11-14 10:17:46,797 [INFO] I2sManager:553 - AudioClock : 15943Divider : 24Odd : 1
+2023-11-14 10:17:52,015 [INFO] Gpio:273 - dependency for GPIO [I2S1, I2S2, SPI3]
+2023-11-14 10:18:12,369 [INFO] I2sManager:658 - 5.0E7
+2023-11-14 10:18:12,369 [INFO] I2sManager:195 - I2S Clock Value : 5.0E7
+2023-11-14 10:18:12,370 [INFO] I2sManager:553 - AudioClock : 15943Divider : 24Odd : 1
+2023-11-14 10:18:38,148 [INFO] I2sManager:658 - 5.0E7
+2023-11-14 10:18:38,148 [INFO] I2sManager:195 - I2S Clock Value : 5.0E7
+2023-11-14 10:18:38,149 [INFO] I2sManager:553 - AudioClock : 43402Divider : 9Odd : 0
+2023-11-14 10:18:40,949 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x225,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-14 10:18:54,942 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x225,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-14 10:19:11,216 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 287574832 Bytes (940572672)
+2023-11-14 10:19:11,838 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 314315568 Bytes (940572672)
+2023-11-14 10:19:14,143 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 380898096 Bytes (940572672)
+2023-11-14 10:19:14,582 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2023-11-14 10:19:14,582 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2S
+2023-11-14 10:19:14,583 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2S
+2023-11-14 10:19:14,583 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-11-14 10:19:14,583 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-11-14 10:19:14,583 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: DMA
+2023-11-14 10:19:14,583 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-11-14 10:19:14,583 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: FATFS
+2023-11-14 10:19:14,584 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2023-11-14 10:19:14,591 [INFO] Argument:319 - Argument : hdmavalue: null
+2023-11-14 10:19:14,591 [INFO] Argument:321 - 	 sub Args: 
+2023-11-14 10:19:14,591 [INFO] Argument:319 - Argument : Instancevalue: DMA2_Stream3
+2023-11-14 10:19:14,592 [INFO] Argument:329 - Argument : Instancevalue: DMA2_Stream3
+2023-11-14 10:19:14,592 [INFO] Argument:319 - Argument : Initvalue: null
+2023-11-14 10:19:14,592 [INFO] Argument:321 - 	 sub Args: 
+2023-11-14 10:19:14,592 [INFO] Argument:319 - Argument : Channelvalue: DMA_CHANNEL_3
+2023-11-14 10:19:14,592 [INFO] Argument:329 - Argument : Channelvalue: DMA_CHANNEL_3
+2023-11-14 10:19:14,592 [INFO] Argument:319 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2023-11-14 10:19:14,592 [INFO] Argument:329 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2023-11-14 10:19:14,592 [INFO] Argument:319 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-11-14 10:19:14,592 [INFO] Argument:329 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-11-14 10:19:14,592 [INFO] Argument:319 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-11-14 10:19:14,592 [INFO] Argument:329 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-11-14 10:19:14,592 [INFO] Argument:319 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-11-14 10:19:14,592 [INFO] Argument:329 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-11-14 10:19:14,592 [INFO] Argument:319 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-11-14 10:19:14,592 [INFO] Argument:329 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-11-14 10:19:14,592 [INFO] Argument:319 - Argument : Modevalue: DMA_NORMAL
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : Modevalue: DMA_NORMAL
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : FIFOThresholdvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : FIFOThresholdvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : MemBurstvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : MemBurstvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : PeriphBurstvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : PeriphBurstvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : Lockvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : Lockvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : Statevalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : Statevalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : Parentvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : Parentvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : XferCpltCallbackvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : XferCpltCallbackvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : XferHalfCpltCallbackvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : XferHalfCpltCallbackvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : XferM1CpltCallbackvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : XferM1CpltCallbackvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : XferErrorCallbackvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : XferErrorCallbackvalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:319 - Argument : ErrorCodevalue: null
+2023-11-14 10:19:14,594 [INFO] Argument:329 - Argument : ErrorCodevalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : hdmavalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:321 - 	 sub Args: 
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : Instancevalue: DMA1_Stream3
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : Instancevalue: DMA1_Stream3
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : Initvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:321 - 	 sub Args: 
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : Channelvalue: DMA_CHANNEL_0
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : Channelvalue: DMA_CHANNEL_0
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : Modevalue: DMA_CIRCULAR
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : Modevalue: DMA_CIRCULAR
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : FIFOThresholdvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : FIFOThresholdvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : MemBurstvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : MemBurstvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : PeriphBurstvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : PeriphBurstvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : Lockvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:329 - Argument : Lockvalue: null
+2023-11-14 10:19:14,598 [INFO] Argument:319 - Argument : Statevalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:329 - Argument : Statevalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:319 - Argument : Parentvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:329 - Argument : Parentvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:319 - Argument : XferCpltCallbackvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:329 - Argument : XferCpltCallbackvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:319 - Argument : XferHalfCpltCallbackvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:329 - Argument : XferHalfCpltCallbackvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:319 - Argument : XferM1CpltCallbackvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:329 - Argument : XferM1CpltCallbackvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:319 - Argument : XferErrorCallbackvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:329 - Argument : XferErrorCallbackvalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:319 - Argument : ErrorCodevalue: null
+2023-11-14 10:19:14,600 [INFO] Argument:329 - Argument : ErrorCodevalue: null
+2023-11-14 10:19:14,909 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\license.tmp_save
+2023-11-14 10:19:15,046 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\license.tmp
+2023-11-14 10:19:15,122 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\gpio.tmp_save
+2023-11-14 10:19:15,285 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\gpio.tmp
+2023-11-14 10:19:15,584 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-11-14 10:19:15,599 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_HalInit.tmp_save
+2023-11-14 10:19:15,769 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_HalInit.tmp
+2023-11-14 10:19:15,783 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_vars.tmp_save
+2023-11-14 10:19:15,889 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_vars.tmp
+2023-11-14 10:19:15,942 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_ext_vars.tmp_save
+2023-11-14 10:19:16,051 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_ext_vars.tmp
+2023-11-14 10:19:16,064 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_inc.tmp_save
+2023-11-14 10:19:16,157 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_inc.tmp
+2023-11-14 10:19:16,246 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\dma.tmp_save
+2023-11-14 10:19:16,342 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\dma.tmp
+2023-11-14 10:19:16,356 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\dma_GV.tmp_save
+2023-11-14 10:19:16,439 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\dma_GV.tmp
+2023-11-14 10:19:16,445 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-11-14 10:19:16,453 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_HalInit.tmp_save
+2023-11-14 10:19:16,574 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_HalInit.tmp
+2023-11-14 10:19:16,581 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_vars.tmp_save
+2023-11-14 10:19:16,673 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_vars.tmp
+2023-11-14 10:19:16,683 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_ext_vars.tmp_save
+2023-11-14 10:19:16,781 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_ext_vars.tmp
+2023-11-14 10:19:16,790 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_inc.tmp_save
+2023-11-14 10:19:16,899 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_inc.tmp
+2023-11-14 10:19:16,923 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\ffconf.h_save
+2023-11-14 10:19:17,075 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\ffconf.h
+2023-11-14 10:19:17,108 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\user_diskio.c_save
+2023-11-14 10:19:17,227 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\user_diskio.c
+2023-11-14 10:19:17,285 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\user_diskio.h_save
+2023-11-14 10:19:17,445 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\user_diskio.h
+2023-11-14 10:19:17,506 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\App\fatfs.c_save
+2023-11-14 10:19:17,632 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\App\fatfs.c
+2023-11-14 10:19:17,662 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\App\fatfs.h_save
+2023-11-14 10:19:17,777 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\App\fatfs.h
+2023-11-14 10:19:17,853 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\stm32f4xx_it.c_save
+2023-11-14 10:19:18,105 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\stm32f4xx_it.c
+2023-11-14 10:19:18,169 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\stm32f4xx_it.h_save
+2023-11-14 10:19:18,279 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\stm32f4xx_it.h
+2023-11-14 10:19:18,334 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\stm32f4xx_hal_msp.c_save
+2023-11-14 10:19:18,510 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\stm32f4xx_hal_msp.c
+2023-11-14 10:19:18,562 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\system.tmp_save
+2023-11-14 10:19:18,656 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\system.tmp
+2023-11-14 10:19:18,693 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-11-14 10:19:18,841 [INFO] CodeEngine:335 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\stm32f4xx_hal_conf.h
+2023-11-14 10:19:18,873 [WARN] IPConfigManager:2937 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2023-11-14 10:19:18,912 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\main.h_save
+2023-11-14 10:19:19,081 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\main.h
+2023-11-14 10:19:19,113 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\main.c_save
+2023-11-14 10:19:19,296 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\main.c
+2023-11-14 10:19:20,184 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 303mS.
+2023-11-14 10:19:20,193 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-11-14 10:19:20,496 [INFO] ConfigFileManager:1457 - The Die is : DIE421
+2023-11-14 10:19:22,673 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 2481mS.
+2023-11-14 10:19:22,674 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 1mS.
+2023-11-14 10:19:22,678 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 1mS.
+2023-11-14 10:20:14,751 [INFO] Gpio:273 - dependency for GPIO [I2S1, I2S2, SPI3]
+2023-11-14 10:20:21,843 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,2,27,418x396,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-14 10:20:27,322 [INFO] Gpio:273 - dependency for GPIO [I2S1, I2S2, SPI3]
+2023-11-14 10:20:32,411 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 677227984 Bytes (1048576000)
+2023-11-14 10:20:33,019 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 704490960 Bytes (1048576000)
+2023-11-14 10:20:34,460 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 766356944 Bytes (1048576000)
+2023-11-14 10:20:34,732 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2023-11-14 10:20:34,732 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2S
+2023-11-14 10:20:34,732 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2S
+2023-11-14 10:20:34,732 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-11-14 10:20:34,732 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-11-14 10:20:34,732 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: DMA
+2023-11-14 10:20:34,733 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-11-14 10:20:34,733 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: FATFS
+2023-11-14 10:20:34,734 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2023-11-14 10:20:34,737 [INFO] Argument:319 - Argument : hdmavalue: null
+2023-11-14 10:20:34,737 [INFO] Argument:321 - 	 sub Args: 
+2023-11-14 10:20:34,737 [INFO] Argument:319 - Argument : Instancevalue: DMA2_Stream3
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : Instancevalue: DMA2_Stream3
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : Initvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:321 - 	 sub Args: 
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : Channelvalue: DMA_CHANNEL_3
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : Channelvalue: DMA_CHANNEL_3
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : Modevalue: DMA_NORMAL
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : Modevalue: DMA_NORMAL
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : FIFOThresholdvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : FIFOThresholdvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : MemBurstvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : MemBurstvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : PeriphBurstvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : PeriphBurstvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : Lockvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : Lockvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : Statevalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : Statevalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : Parentvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : Parentvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : XferCpltCallbackvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : XferCpltCallbackvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : XferHalfCpltCallbackvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : XferHalfCpltCallbackvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : XferM1CpltCallbackvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : XferM1CpltCallbackvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : XferErrorCallbackvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : XferErrorCallbackvalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:319 - Argument : ErrorCodevalue: null
+2023-11-14 10:20:34,739 [INFO] Argument:329 - Argument : ErrorCodevalue: null
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : hdmavalue: null
+2023-11-14 10:20:34,741 [INFO] Argument:321 - 	 sub Args: 
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : Instancevalue: DMA1_Stream3
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : Instancevalue: DMA1_Stream3
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : Initvalue: null
+2023-11-14 10:20:34,741 [INFO] Argument:321 - 	 sub Args: 
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : Channelvalue: DMA_CHANNEL_0
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : Channelvalue: DMA_CHANNEL_0
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : Modevalue: DMA_CIRCULAR
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : Modevalue: DMA_CIRCULAR
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-11-14 10:20:34,741 [INFO] Argument:329 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-11-14 10:20:34,741 [INFO] Argument:319 - Argument : FIFOThresholdvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : FIFOThresholdvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : MemBurstvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : MemBurstvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : PeriphBurstvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : PeriphBurstvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : Lockvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : Lockvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : Statevalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : Statevalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : Parentvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : Parentvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : XferCpltCallbackvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : XferCpltCallbackvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : XferHalfCpltCallbackvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : XferHalfCpltCallbackvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : XferM1CpltCallbackvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : XferM1CpltCallbackvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : XferErrorCallbackvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : XferErrorCallbackvalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:319 - Argument : ErrorCodevalue: null
+2023-11-14 10:20:34,742 [INFO] Argument:329 - Argument : ErrorCodevalue: null
+2023-11-14 10:20:34,911 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\license.tmp_save
+2023-11-14 10:20:35,103 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\license.tmp
+2023-11-14 10:20:35,121 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\gpio.tmp_save
+2023-11-14 10:20:35,203 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\gpio.tmp
+2023-11-14 10:20:35,333 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-11-14 10:20:35,341 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_HalInit.tmp_save
+2023-11-14 10:20:35,431 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_HalInit.tmp
+2023-11-14 10:20:35,434 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_vars.tmp_save
+2023-11-14 10:20:35,482 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_vars.tmp
+2023-11-14 10:20:35,485 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_ext_vars.tmp_save
+2023-11-14 10:20:35,534 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_ext_vars.tmp
+2023-11-14 10:20:35,537 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_inc.tmp_save
+2023-11-14 10:20:35,585 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_inc.tmp
+2023-11-14 10:20:35,613 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\dma.tmp_save
+2023-11-14 10:20:35,685 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\dma.tmp
+2023-11-14 10:20:35,688 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\dma_GV.tmp_save
+2023-11-14 10:20:35,736 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\dma_GV.tmp
+2023-11-14 10:20:35,740 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-11-14 10:20:35,748 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_HalInit.tmp_save
+2023-11-14 10:20:35,817 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_HalInit.tmp
+2023-11-14 10:20:35,823 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_vars.tmp_save
+2023-11-14 10:20:35,870 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_vars.tmp
+2023-11-14 10:20:35,876 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_ext_vars.tmp_save
+2023-11-14 10:20:35,922 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_ext_vars.tmp
+2023-11-14 10:20:35,927 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_inc.tmp_save
+2023-11-14 10:20:35,973 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\fatfs_inc.tmp
+2023-11-14 10:20:35,985 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\ffconf.h_save
+2023-11-14 10:20:36,063 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\ffconf.h
+2023-11-14 10:20:36,077 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\user_diskio.c_save
+2023-11-14 10:20:36,135 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\user_diskio.c
+2023-11-14 10:20:36,141 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\user_diskio.h_save
+2023-11-14 10:20:36,195 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\Target\user_diskio.h
+2023-11-14 10:20:36,199 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\App\fatfs.c_save
+2023-11-14 10:20:36,250 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\App\fatfs.c
+2023-11-14 10:20:36,255 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\App\fatfs.h_save
+2023-11-14 10:20:36,324 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\FATFS\App\fatfs.h
+2023-11-14 10:20:36,342 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\stm32f4xx_it.c_save
+2023-11-14 10:20:36,438 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\stm32f4xx_it.c
+2023-11-14 10:20:36,449 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\stm32f4xx_it.h_save
+2023-11-14 10:20:36,520 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\stm32f4xx_it.h
+2023-11-14 10:20:36,545 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\stm32f4xx_hal_msp.c_save
+2023-11-14 10:20:36,639 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\stm32f4xx_hal_msp.c
+2023-11-14 10:20:36,644 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\system.tmp_save
+2023-11-14 10:20:36,695 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\MXTmpFiles\system.tmp
+2023-11-14 10:20:36,709 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-11-14 10:20:36,798 [INFO] CodeEngine:335 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\stm32f4xx_hal_conf.h
+2023-11-14 10:20:36,819 [WARN] IPConfigManager:2937 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2023-11-14 10:20:36,839 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\main.h_save
+2023-11-14 10:20:36,925 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Inc\main.h
+2023-11-14 10:20:36,937 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\main.c_save
+2023-11-14 10:20:37,049 [INFO] CodeEngine:279 - Generated code: C:\Users\kiera\STM32CubeIDE\workspace_1.13.1\mic_tutorial\mic_tutorial\Core\Src\main.c
+2023-11-14 10:20:37,608 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 152mS.
+2023-11-14 10:20:37,614 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-11-14 10:20:37,758 [INFO] ConfigFileManager:1457 - The Die is : DIE421
+2023-11-14 10:20:39,097 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1483mS.
+2023-11-14 10:20:39,099 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-11-14 10:20:39,106 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.

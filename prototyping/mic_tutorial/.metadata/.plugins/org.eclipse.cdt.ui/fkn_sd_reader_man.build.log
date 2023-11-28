@@ -1,0 +1,17 @@
+15:56:01 **** Incremental Build of configuration Debug for project fkn_sd_reader_man ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'myprintf':
+../Core/Src/main.c:70:3: warning: implicit declaration of function 'HAL_UART_Transmit'; did you mean 'HAL_SPI_Transmit'? [-Wimplicit-function-declaration]
+   70 |   HAL_UART_Transmit(&huart2, (uint8_t*)buffer, len, -1);
+      |   ^~~~~~~~~~~~~~~~~
+      |   HAL_SPI_Transmit
+../Core/Src/main.c:70:22: error: 'huart2' undeclared (first use in this function)
+   70 |   HAL_UART_Transmit(&huart2, (uint8_t*)buffer, len, -1);
+      |                      ^~~~~~
+../Core/Src/main.c:70:22: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+15:56:02 Build Failed. 2 errors, 1 warnings. (took 402ms)
+

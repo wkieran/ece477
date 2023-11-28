@@ -1,0 +1,14 @@
+12:18:44 **** Incremental Build of configuration Debug for project amp_stuff ****
+make -j16 all 
+arm-none-eabi-size   amp_stuff.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20260	     20	   2252	  22532	   5804	amp_stuff.elf
+Finished building: default.size.stdout
+ 
+12:19:05 **** Incremental Build of configuration Debug for project amp_stuff ****
+make -j16 all 
+arm-none-eabi-size   amp_stuff.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20260	     20	   2252	  22532	   5804	amp_stuff.elf
+Finished building: default.size.stdout
+ 

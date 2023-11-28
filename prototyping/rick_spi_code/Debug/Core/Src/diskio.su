@@ -1,0 +1,17 @@
+../Core/Src/diskio.c:11:26:init_sdcard_spi	8	static
+../Core/Src/diskio.c:14:26:sdcard_high_speed	8	static
+../Core/Src/diskio.c:17:26:enable_sdcard	8	static
+../Core/Src/diskio.c:20:26:disable_sdcard	8	static
+../Core/Src/diskio.c:25:6:spi_clear_rxfifo	24	static
+../Core/Src/diskio.c:36:9:sdcard_write	24	static
+../Core/Src/diskio.c:52:6:sdcard_init_clock	16	static
+../Core/Src/diskio.c:59:6:sdcard_stall	16	static
+../Core/Src/diskio.c:70:5:sdcard_cmd	32	static
+../Core/Src/diskio.c:92:5:sdcard_r3	24	static
+../Core/Src/diskio.c:105:5:sdcard_readblock	40	static
+../Core/Src/diskio.c:124:5:sdcard_writeblock	32	static
+../Core/Src/diskio.c:151:9:disk_initialize	40	static
+../Core/Src/diskio.c:261:9:disk_status	16	static
+../Core/Src/diskio.c:286:9:disk_read	40	static
+../Core/Src/diskio.c:323:9:disk_write	40	static
+../Core/Src/diskio.c:359:9:disk_ioctl	40	static
